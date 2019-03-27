@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import { withAuth } from '../providers/AuthProvider';
-class Private extends Component {
+class Profile extends Component {
   render() {
     const { user } = this.props
     return (
       <div>
+        <h1>PROFILE</h1>
         <h1>Welcome {user.username}</h1>
       </div>
     )
   }
 }
 
-export default withAuth(Private);
+export default withAuth(Profile);
