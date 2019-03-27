@@ -14,7 +14,6 @@ class App extends Component {
     return (
       <AuthProvider>
         <div className="container">
-          <h1>Module 3 boilerplate</h1>
           <Navbar />
           <Switch>
             <AnonRoute path="/signup" component={Signup} />
