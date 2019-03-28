@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { withAuth } from '../providers/AuthProvider';
+
 class Profile extends Component {
   render() {
     const { user } = this.props
+    console.log(this.props);
     return (
       <div>
         <h1>PROFILE</h1>
