@@ -9,8 +9,8 @@ class Navbar extends Component {
     console.log('e', user);
     if (isLogged) {
       return <div>
-        <p>username: { username }</p>
         <p onClick={logout}>Logout</p>
+        <Link to='/search'>Search</Link>
       </div>
     } else {
       return <div>
