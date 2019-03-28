@@ -9,6 +9,8 @@ class Profile extends Component {
       <div>
         <h1>PROFILE</h1>
         <h1>Welcome {user.username}</h1>
+        <h1>{user.name}</h1>
+        <h1>{user.email}</h1>
       </div>
     )
   }

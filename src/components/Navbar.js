@@ -6,6 +6,7 @@ class Navbar extends Component {
   render() {
     const { isLogged, user, logout } = this.props;
     const { username } = user;
+    console.log('e', user);
     if (isLogged) {
       return <div>
         <p>username: { username }</p>
