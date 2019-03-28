@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withAuth } from '../providers/AuthProvider';
+import Wrap from '../components/Wrap';
 
 class Profile extends Component {
   render() {
@@ -10,6 +11,7 @@ class Profile extends Component {
         <h1>Welcome {user.username}</h1>
         <h1>{user.name}</h1>
         <h1>{user.email}</h1>
+        <Wrap />
       </div>
     )
   }
