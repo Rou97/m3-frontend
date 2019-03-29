@@ -4,9 +4,7 @@ import { withAuth } from '../providers/AuthProvider';
 
 class Navbar extends Component {
   render() {
-    const { isLogged, user, logout } = this.props;
-    const { username } = user;
-    console.log('e', user);
+    const { isLogged, logout } = this.props;
     if (isLogged) {
       return <div>
         <p onClick={logout}>Logout</p>
