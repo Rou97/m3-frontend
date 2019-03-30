@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
 
-class Wrap extends Component {
+class CreateTuit extends Component {
 
     state = {
         info: "",
       }
-
-    handleFormSubmit = (event) => {
-        event.preventDefault();
-        this.setState({
-            info: "",
-        });
-        console.log(this.state);
-    }
     
     handleChange = (event) => {
+        // tuitService.test();
         this.setState({
             info: event.target.value
         });
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.onSubmit(this.state);
+        this.setState({
+          info:""
+        })
+      }
+
     render() {
         return (
             <div>
-                <form onSubmit={this.handleFormSubmit}>
+                <form onSubmit={this.props.onSubmit}>
                     <input type="text" name="info" value={this.state.info }onChange={this.handleChange}/>
                     <input type="submit" value="Create" />
                 </form>
@@ -32,4 +33,4 @@ class Wrap extends Component {
     }
 }
 
-export default Wrap;
+export default CreateTuit;
