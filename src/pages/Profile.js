@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import { withAuth } from '../providers/AuthProvider';
 import CreateTuit from '../components/CreateTuit';
-import tuitService from '../lib/auth-service';
+import tuitService from '../lib/tuit-service';
 
 class Profile extends Component {
 
   handleSubmit = (data) => {
+    console.log('data', data)
     tuitService.createTuit(data)
       .then((result) => {
         console.log('result', result);
-        this.props.history.push('/profile/admin');
+        // this.props.history.push('/profile/admin');
       })
       .catch(err => console.log(err));
   }

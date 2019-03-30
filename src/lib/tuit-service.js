@@ -8,7 +8,7 @@ class TuitService {
   }
 
   createTuit(body) {
-    return this.api.post('/profile/admin', body)
+    return this.tuit.post('/profile/:username', body)
       .then(({data}) => data)
   }
 
