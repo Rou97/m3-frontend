@@ -4,9 +4,11 @@ class WrapTuits extends Component {
 
     render() {
 
+        console.log('hola', this.props.data);
+
         return (
             <div>
-                <p>Hola</p>
+                <p>{this.props.data}</p>
             </div>
         );
     }
