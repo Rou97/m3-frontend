@@ -36,6 +36,7 @@ class Profile extends Component {
   render() {
     const { user } = this.props
     const {tuits} = this.state;
+    console.log('props', this.props);
 
     if(this.props.location.state.profile){
       const {profile} = this.props.location.state;

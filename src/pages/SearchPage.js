@@ -6,7 +6,7 @@ class SearchPage extends Component {
     state = {
         user: "",
         userFound: null,
-      }
+    }
     
     handleChange = (event) => {
         this.setState({
