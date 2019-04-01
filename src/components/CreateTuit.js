@@ -4,7 +4,7 @@ class CreateTuit extends Component {
 
     state = {
         info: "",
-      }
+    }
     
     handleChange = (event) => {
         this.setState({

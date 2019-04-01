@@ -18,6 +18,17 @@ class TuitService {
       .then(({data}) => data)
   }
 
+  deleteTuit(id) {
+    console.log('entra', id);
+    return this.tuit.delete(`/profile/:username/${id}`)
+      .then(({data}) => data)
+  }
+
+  deleteTortilla(id) {
+    return this.api.delete(`/${id}`)
+      .then(({data}) => data)
+  }
+
 }
 
 const tuitService = new TuitService();

@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
+import tuitService from '../lib/tuit-service';
 
 class WrapTuits extends Component {
 
     
-    handleSubmit = (event) => {
-        event.preventDefault();
-    }
+    
     
     render() {
-        console.log(this.props);
 
+        console.log('pr', this.props);
+        // const {data, _id, onDelete} = this.props;
+        const {id} = this.props;
+        console.log('idddddd', id);
         return (
             <div>
                 <p>{this.props.data}</p>
-                {/* <form onSubmit={this.handleSubmit}>
-                    <input type="submit" value="Edit" />
-                </form> */}
+                <button onClick={() => tuitService.deleteTuit(id) }>Delete</button>
             </div>
         );
     }

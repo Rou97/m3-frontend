@@ -33,14 +33,22 @@ class Profile extends Component {
       .catch(err => console.log(err));
   }
 
+  handleDelete = (id) => {
+    // console.log('ahora', id)
+    tuitService.deleteTui(id)
+      .then(result => {
+        console.log(result);
+        this.getTuits();
+      })
+      .catch(err => console.log(err));
+  }
+
   render() {
     const { user } = this.props
     const {tuits} = this.state;
-    console.log('props', this.props);
 
     if(this.props.location.state.profile){
       const {profile} = this.props.location.state;
-      console.log(profile)
       return (
         <div>
           <h1>PROFILE</h1>
@@ -50,17 +58,20 @@ class Profile extends Component {
           <ul>
             {profile.tuits.map(tuit => (
                 <WrapTuits
-                key={tuit._id}
-                data={tuit.info}
+                  key={tuit._id}
+                  id={tuit._id}
+                  data={tuit.info}
+                  onDelete={this.handleDelete}
                 />
             ))}
           </ul>
-          <CreateTuit onSubmit={this.handleSubmit} />
+          <CreateTuit 
+            onSubmit={this.handleSubmit} 
+          />
         </div>
       )
     }
 
-  
     return (
       <div>
         <h1>PROFILE</h1>
@@ -71,11 +82,13 @@ class Profile extends Component {
           {tuits.map(tuit => (
               <WrapTuits
               key={tuit._id}
+              id={tuit._id}
               data={tuit.info}
+              onDelete={this.handleDelete}
               />
           ))}
         </ul>
-        <CreateTuit onSubmit={this.handleSubmit} />
+        <CreateTuit />
       </div>
     )
   }

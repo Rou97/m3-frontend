@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { withAuth } from '../providers/AuthProvider';
 import searchService from '../lib/search-service';
 
