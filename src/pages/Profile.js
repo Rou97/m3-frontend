@@ -36,15 +36,36 @@ class Profile extends Component {
   render() {
     const { user } = this.props
     const {tuits} = this.state;
-    
-    console.log('tuits', tuits);
 
+    if(this.props.location.state.profile){
+      const {profile} = this.props.location.state;
+      console.log(profile)
+      return (
+        <div>
+          <h1>PROFILE</h1>
+          <h1>Welcome {profile.username }</h1>
+          <h1>{profile.name }</h1>
+          <h1>{profile.email }</h1>
+          <ul>
+            {profile.tuits.map(tuit => (
+                <WrapTuits
+                key={tuit._id}
+                data={tuit.info}
+                />
+            ))}
+          </ul>
+          <CreateTuit onSubmit={this.handleSubmit} />
+        </div>
+      )
+    }
+
+  
     return (
       <div>
         <h1>PROFILE</h1>
-        <h1>Welcome {user.username}</h1>
+        <h1>Welcome { user.username}</h1>
         <h1>{user.name}</h1>
-        <h1>{user.email}</h1>
+        <h1>{ user.email}</h1>
         <ul>
           {tuits.map(tuit => (
               <WrapTuits

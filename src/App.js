@@ -8,6 +8,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import AuthProvider from './providers/AuthProvider';
 import CreateTuit from './components/CreateTuit';
+import SearchPage from './pages/SearchPage';
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
             {/* <PrivateRoute exact path="/profile" component={Profile} /> */}
             <PrivateRoute exact path="/profile/:username" component={Profile} />
             <PrivateRoute exact path="/profile/:username/tuit" component={CreateTuit} />
+            <PrivateRoute exact path="/search" component={SearchPage} />
           </Switch>
         </div>
       </AuthProvider>

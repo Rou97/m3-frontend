@@ -7,7 +7,6 @@ class CreateTuit extends Component {
       }
     
     handleChange = (event) => {
-        // tuitService.test();
         this.setState({
             info: event.target.value
         });
