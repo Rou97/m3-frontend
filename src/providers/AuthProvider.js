@@ -71,6 +71,7 @@ export default class AuthProvider extends Component {
   componentDidMount() {
     authService.me()
       .then((user) => {
+        console.log("provider ", user)
         this.setState({
           isLogged: true,
           user,

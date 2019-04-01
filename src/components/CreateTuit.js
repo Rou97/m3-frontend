@@ -15,6 +15,7 @@ class CreateTuit extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        console.log("clicked create")
         this.props.onSubmit(this.state);
         this.setState({
           info:""
@@ -24,7 +25,7 @@ class CreateTuit extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.props.onSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     <input type="text" name="info" value={this.state.info }onChange={this.handleChange}/>
                     <input type="submit" value="Create" />
                 </form>

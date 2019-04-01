@@ -26,7 +26,7 @@ class AuthService {
   }
 
   me() {
-    return this.auth.get('/')
+    return this.auth.get('/auth/me')
     .then(response => response.data)
   }
 }
