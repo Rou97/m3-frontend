@@ -17,10 +17,10 @@ class Profile extends Component {
   getTuits = () => {
       tuitService.getAll()
         .then(tuits => {
-          console.log('tuits', tuits);
           this.setState({
             tuits
           })
+          console.log('aqui', tuits);
         })
         .catch(err => console.log(err));
   }
@@ -36,7 +36,9 @@ class Profile extends Component {
   render() {
     const { user } = this.props
     const {tuits} = this.state;
-    console.log('render', tuits)
+    
+    console.log('tuits', tuits);
+
     return (
       <div>
         <h1>PROFILE</h1>

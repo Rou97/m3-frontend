@@ -14,7 +14,6 @@ class TuitService {
   }
 
   createTuit(body) {
-    console.log('body', body);
     return this.tuit.post('/profile/:username', body)
       .then(({data}) => data)
   }

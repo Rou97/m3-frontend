@@ -15,12 +15,11 @@ class CreateTuit extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log("clicked create")
         this.props.onSubmit(this.state);
         this.setState({
           info:""
         })
-      }
+    }
 
     render() {
         return (
