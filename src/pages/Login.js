@@ -25,11 +25,13 @@ class Login extends Component {
     const { username, password } = this.state;
     return (
       <form onSubmit={this.handleFormSubmit}>
-        <label>Username:</label>
-        <input type="text" name="username" value={username} onChange={this.handleChange}/>
-        <label>Password:</label>
-        <input type="password" name="password" value={password} onChange={this.handleChange} />
-        <input type="submit" value="Login" />
+        <div class="form-group">
+          <label>Username:</label>
+          <input class="form-control" type="text" name="username" value={username} onChange={this.handleChange}/>
+          <label>Password:</label>
+          <input class="form-control" type="password" name="password" value={password} onChange={this.handleChange} />
+          <input class="btn btn-primary" type="submit" value="Login" />
+        </div>
       </form>
     )
   }

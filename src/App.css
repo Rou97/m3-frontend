@@ -1,0 +1,32 @@
+/********** WrapTuits **********/
+.card-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.card-header img {
+    width: 20px;
+    height: 20px;
+}
+
+.card-body {
+    background-color: white;
+    color: black;
+}
+
+
+/********** Profile **********/
+/* .container-fluid {
+    display: block;
+    background-color: yellow; 
+    height: 40vh;
+} */
+
+/********** Navbar **********/
+.navbar {
+   position: fixed;
+   height: 10vh;
+   top: 90vh;
+    
+}

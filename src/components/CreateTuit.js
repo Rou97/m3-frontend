@@ -22,9 +22,9 @@ class CreateTuit extends Component {
 
     render() {
         return (
-            <div>
+            <div className="card">
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" name="info" value={this.state.info }onChange={this.handleChange}/>
+                    <input type="text" name="" value={this.state.info }onChange={this.handleChange}/>
                     <input type="submit" value="Create" />
                 </form>
             </div>

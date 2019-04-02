@@ -9,24 +9,30 @@ import Login from './pages/Login';
 import AuthProvider from './providers/AuthProvider';
 import CreateTuit from './components/CreateTuit';
 import SearchPage from './pages/SearchPage';
-
+import LinePage from './pages/LinePage';
+import 'bootstrap/dist/css/bootstrap.css';
+// import logo from './img/image.png';
 
 class App extends Component {
   render() {
     return (
-      <AuthProvider>
-        <div className="container">
-          <Navbar />
-          <Switch>
-            <AnonRoute path="/signup" component={Signup} />
-            <AnonRoute path="/login" component={Login} />
-            {/* <PrivateRoute exact path="/profile" component={Profile} /> */}
-            <PrivateRoute exact path="/profile/:username" component={Profile} />
-            <PrivateRoute exact path="/profile/:username/tuit" component={CreateTuit} />
-            <PrivateRoute exact path="/search" component={SearchPage} />
-          </Switch>
-        </div>
-      </AuthProvider>
+      <div>
+        {/* <img src={logo} alt="Logo" /> */}
+        <AuthProvider>
+          <div className="container">
+            <Switch>
+              <AnonRoute path="/signup" component={Signup} />
+              <AnonRoute path="/login" component={Login} />
+              {/* <PrivateRoute exact path="/profile" component={Profile} /> */}
+              <PrivateRoute exact path="/profile/:username" component={Profile} />
+              <PrivateRoute exact path="/profile/:username/tuit" component={CreateTuit} />
+              <PrivateRoute exact path="/search" component={SearchPage} />
+              <PrivateRoute exact path="/line" component={LinePage} />
+            </Switch>
+            <Navbar />
+          </div>
+        </AuthProvider>
+      </div>
     )
   }
 }
