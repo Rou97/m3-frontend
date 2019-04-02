@@ -42,10 +42,11 @@ class SearchPage extends Component {
         }
 
         return (
-            <div>
+            <div className="form-group search-wrap">
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" name="user" value={this.state.user }onChange={this.handleChange}/>
-                    <input type="submit" value="Search" />
+                <h1 className="title">Search an user</h1>
+                    <input className="form-control" type="text" name="user" value={this.state.user }onChange={this.handleChange}/>
+                    <input class="btn btn-primary search" type="submit" value="Search" />
                 </form>         
             </div>
         );

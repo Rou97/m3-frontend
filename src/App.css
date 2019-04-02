@@ -71,6 +71,23 @@
     justify-items: center;
 }
 
-.form-control {
+/* .form-control {
     height: 80%;
+    align-self: center;
+    
+} */
+
+.search {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 5px;
 }
+
+.title {
+    justify-content: center;
+}
+
+.search-wrap {
+    background-color: yellow;
+    height: 50vh;
+} 
