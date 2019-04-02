@@ -36,10 +36,10 @@ class Navbar extends Component {
             <Link className="nav-link" to='/search'>Search</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to={{ pathname: `/profile/${this.props.user.username}`, state:{profile:redirectUser}}}>Profile</Link>
+            <Link className="nav-link" to='/line'>Line</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to='/line'>Line</Link>
+            <Link className="nav-link" to={{ pathname: `/profile/${this.props.user.username}`, state:{profile:redirectUser}}}>Profile</Link>
           </li>
         </ul>
       </div>

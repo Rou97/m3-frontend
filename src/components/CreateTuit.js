@@ -22,12 +22,12 @@ class CreateTuit extends Component {
 
     render() {
         return (
-            <div className="card">
-                <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
+                <div className="form-group create-tuit">
                     <input type="text" name="" value={this.state.info }onChange={this.handleChange}/>
                     <input type="submit" value="Create" />
-                </form>
-            </div>
+                </div>
+            </form>
         );
     }
 }

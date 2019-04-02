@@ -8,8 +8,8 @@ class TuitService {
     })
   }
 
-  getAllByUser() {
-    return this.tuit.get('/profile/:username')
+  getAllByUser(username) {
+    return this.tuit.get(`/profile/${username}`)
       .then(({data}) => data)
   }
 
@@ -19,12 +19,8 @@ class TuitService {
   }
 
   deleteTuit(id) {
+    console.log('iidd', id)
     return this.tuit.delete(`/profile/:username/${id}`)
-      .then(({data}) => data)
-  }
-
-  deleteTortilla(id) {
-    return this.api.delete(`/${id}`)
       .then(({data}) => data)
   }
 

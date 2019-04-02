@@ -1,32 +1,44 @@
 import React, { Component } from 'react';
-import tuitService from '../lib/tuit-service';
+import { withAuth } from '../providers/AuthProvider';
 import cross from '../img/delete.png';
 import '../App.css'; 
 
 class WrapTuits extends Component {
 
-    
+    test(a, b, id){
+        console.log('props', this.props);
+        console.log('nid', id);
+        if(a === b) {
+            console.log('entra dentro del if')
+            return(
+            <button  onClick={() => this.props.onDelete(id) }>
+                <img src={`${cross}`} alt="icon" className="rounded-circle" />
+            </button>)
+        } else  {
+            console.log('no entra');
+            return null
+        }
+    }
     
     
     render() {
 
-        console.log('pr', this.props);
+        const a = this.props.user._id;
+        const b = this.props.tuit.creator;
         // const {data, _id, onDelete} = this.props;
-        const {id} = this.props;
-        console.log('idddddd', id);
+        const {_id, info} = this.props.tuit;
         return (
             <div className="card text-white bg-primary mb-3">
-                <div class="card-header">ADMIN
-                    <button  onClick={() => this.props.onDelete(id) }>
-                            <img src={`${cross}`} alt="icon" class="rounded-circle" />
-                    </button>
+
+                <div className="card-header">ADMIN
+                    {this.test(a,b, _id)}
                 </div>
-                <div class="card-body">
-                    <p className="card-text">{this.props.data}</p>    
+                <div className="card-body">
+                    <p className="card-text">{info}</p>    
                 </div>
             </div>
         );
     }
 }
 
-export default WrapTuits;
+export default withAuth(WrapTuits);

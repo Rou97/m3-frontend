@@ -24,9 +24,18 @@
 
 /********** Navbar **********/
 
-/* .navbar {
+.navbar {
    position: fixed;
    height: 10vh;
    top: 90vh;
     
-} */
+} 
+
+.create-tuit {
+    position: fixed;
+    height: 5vh;
+    top: 85vh;
+    width: 100%;
+    background-color: white;
+     
+ } 

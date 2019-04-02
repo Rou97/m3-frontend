@@ -9,15 +9,26 @@ import '../App.css';
 class Profile extends Component {
 
   state = {
-    tuits: []
+    tuits: [],
+    userDisplay: this.props.user,
   }
 
   componentDidMount() {
-    this.getTuits();
+
+    const { username: paramsUsername } = this.props.match.params;
+    const { username: loggedUsername } = this.props.user;
+
+    if (paramsUsername !== loggedUsername) {
+      this.setState({
+        userDisplay: this.props.location.state.profile,
+      })
+    } 
+
+    this.getTuits(paramsUsername);
   }
 
-  getTuits = () => {
-    tuitService.getAllByUser()
+  getTuits = (username) => {
+    tuitService.getAllByUser(username)
       .then(tuits => {
         this.setState({
           tuits
@@ -39,6 +50,7 @@ class Profile extends Component {
   }
 
   handleDelete = (id) => {
+    console.log('a ver', id)
     tuitService.deleteTuit(id)
       .then(data => {
         console.log("DATA Tuit delete", data);
@@ -54,68 +66,35 @@ class Profile extends Component {
   }
 
   render() {
-    const { user } = this.props
-    const { tuits } = this.state;
+    const { tuits, userDisplay } = this.state;
+    const { username: loggedUsername } = this.props.user;
 
-    if (this.props.location.state.profile) {
-      const { profile } = this.props.location.state;
-      return (
-        <div>
+    console.log(userDisplay);
 
-          <div>
-            <h1>PROFILE</h1>
-            <h1>Welcome {profile.username}</h1>
-            <h1>{profile.name}</h1>
-            <h1>{profile.email}</h1>
-            <button onClick={() => followService.follow()}>Follow</button>
-          </div>
-
-          <div>
-            <ul>
-              {profile.tuits.map(tuit => (
-                <WrapTuits
-                  key={tuit._id}
-                  id={tuit._id}
-                  data={tuit.info}
-                />
-              ))}
-            </ul>
-          </div>
-
-          <CreateTuit
-            onSubmit={this.handleSubmit}
-          />
-        </div>
-      )
-    }
 
     return (
       <div>
-
-        <div>
-          <h1>PROFILE</h1>
-          <h1>Welcome {user.username}</h1>
-          <h1>{user.name}</h1>
-          <h1>{user.email}</h1>
+        <div className="jumbotron">
+          <h5>{userDisplay.username}</h5>
+          <h6>{userDisplay.name}</h6>
         </div>
-
         <div className="container-fluid block">
           <ul>
             {tuits.map(tuit => (
               <WrapTuits
                 key={tuit._id}
-                id={tuit._id}
-                data={tuit.info}
+                tuit={tuit}
                 onDelete={this.handleDelete}
               />
             ))}
           </ul>
         </div>
-
-        <CreateTuit
-          onSubmit={this.handleSubmit}
-        />
-      </div>
+        <div>
+          <CreateTuit
+            onSubmit={this.handleSubmit}
+          />
+        </div>
+      </div >
     )
   }
 }
