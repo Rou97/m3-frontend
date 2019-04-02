@@ -36,12 +36,16 @@ class Navbar extends Component {
             <Link className="nav-link" to='/search'>Search</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to='/line'>Line</Link>
+            <Link className="nav-link" to='/line'>Tuitline</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to={{ pathname: `/profile/${this.props.user.username}`, state:{profile:redirectUser}}}>Profile</Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to={`/profile/${this.props.user.username}/tuit`}>Create</Link>
+          </li>
         </ul>
+        
       </div>
     } else {
       return <div>

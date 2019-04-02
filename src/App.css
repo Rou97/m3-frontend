@@ -37,10 +37,10 @@
 
 .create-tuit {
     position: fixed;
-    height: 5vh;
-    top: 85vh;
+    height: 50vh;
+    top: 0vh;
     width: 100%;
-    background-color: white;
+    background-color: yellow;
     border: 1px solid black;
      
 }
@@ -63,4 +63,14 @@
     padding: 0;
     margin: 0;
     left: 0px;
+}
+
+.nav-item {
+    width: 20%;
+    align-items: center;
+    justify-items: center;
+}
+
+.form-control {
+    height: 80%;
 }

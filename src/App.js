@@ -11,6 +11,7 @@ import CreateTuit from './components/CreateTuit';
 import SearchPage from './pages/SearchPage';
 import LinePage from './pages/LinePage';
 import 'bootstrap/dist/css/bootstrap.css';
+import { Link } from 'react-router-dom';
 // import logo from './img/image.png';
 
 class App extends Component {

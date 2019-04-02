@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { withAuth } from '../providers/AuthProvider';
-import CreateTuit from '../components/CreateTuit';
+// import CreateTuit from '../components/CreateTuit';
 import WrapTuits from '../components/WrapTuits';
 import tuitService from '../lib/tuit-service';
-import followService from '../lib/follow-service';
 import '../App.css';
 
 class Profile extends Component {
@@ -67,7 +66,7 @@ class Profile extends Component {
 
   render() {
     const { tuits, userDisplay } = this.state;
-    const { username: loggedUsername } = this.props.user;
+    // const { username: loggedUsername } = this.props.user;
 
     console.log(userDisplay);
 
@@ -89,11 +88,11 @@ class Profile extends Component {
             ))}
           </ul>
         </div>
-        <div>
+        {/* <div>
           <CreateTuit
             onSubmit={this.handleSubmit}
           />
-        </div>
+        </div> */}
       </div >
     )
   }
