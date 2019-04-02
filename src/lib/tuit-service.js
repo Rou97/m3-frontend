@@ -8,7 +8,7 @@ class TuitService {
     })
   }
 
-  getAll() {
+  getAllByUser() {
     return this.tuit.get('/profile/:username')
       .then(({data}) => data)
   }
@@ -19,7 +19,6 @@ class TuitService {
   }
 
   deleteTuit(id) {
-    console.log('entra', id);
     return this.tuit.delete(`/profile/:username/${id}`)
       .then(({data}) => data)
   }

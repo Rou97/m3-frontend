@@ -17,7 +17,7 @@ class WrapTuits extends Component {
         return (
             <div className="card text-white bg-primary mb-3">
                 <div class="card-header">ADMIN
-                    <button  onClick={() => tuitService.deleteTuit(id) }>
+                    <button  onClick={() => this.props.onDelete(id) }>
                             <img src={`${cross}`} alt="icon" class="rounded-circle" />
                     </button>
                 </div>
