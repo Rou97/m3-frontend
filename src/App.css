@@ -28,6 +28,10 @@
    position: fixed;
    height: 10vh;
    top: 90vh;
+   width: 100%;
+   padding: 0;
+   margin: 0;
+   left: 0px;
     
 } 
 
@@ -37,5 +41,26 @@
     top: 85vh;
     width: 100%;
     background-color: white;
+    border: 1px solid black;
      
- } 
+}
+
+.container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    left: 0px;
+}
+
+.container-fluid {
+    width: 90%;
+    padding: 0;
+    margin: 0;
+    justify-items: center;
+}
+
+.card {
+    padding: 0;
+    margin: 0;
+    left: 0px;
+}
