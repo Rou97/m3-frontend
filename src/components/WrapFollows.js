@@ -9,7 +9,7 @@ class WrapFollows extends Component {
         return (
             <div className="text-white bg-primary card-center card">
                 <div className="wrap-image card-header">
-                    <img src={`${image}`} alt="img" /> 
+                    <img className="rounded-circle" src={`${image}`} alt="img" /> 
                 </div>
                 <div className="body-follow card-body center-text-card card-body card-margin">
                     <div className="text-card">

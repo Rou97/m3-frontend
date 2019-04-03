@@ -133,24 +133,31 @@
     background-color: #007bff;
     border-radius: 0;
     color: white;
+    justify-content: space-between;
 }
 
 .jumbotron p {
     color: white;
     margin-top: 2.5vh;
+
 }
 
 .profile-image {
-    padding: 2vh;
-    height: 50%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    height: 8vh;
+    width: 8vh;
 }
 
 .profile-image img {
-    height: 100%;;
+    height: 100%;
 }
 
 .profile-names h5 {
     padding: 0;
+    padding-left: 7vw; 
     margin: 0;
 }
 
@@ -171,9 +178,9 @@
     flex-direction: column;
 }
 
-.profile-follow{
+/* .profile-follow{
     margin-left: 50%;
-}
+} */
 
 .wrap-image  {
     width: 50%;
@@ -259,5 +266,12 @@ small {
 .logo-home img{
     width: 100%;
     height: 100%;
+}
+
+.justify-profile {
+    justify-content: space-between;
+    display: flex;
+    align-content: center;
+    align-items: center;
 }
 

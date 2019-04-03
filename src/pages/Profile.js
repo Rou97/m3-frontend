@@ -101,16 +101,20 @@ class Profile extends Component {
     return (
       <div>
         <div className="jumbotron">
+          <div className="justify-profile">
+            <span className="profile-image">
+              <img className="rounded-circle" src={`${userDisplay.image}`} alt="img-profile" height="42" width="42" /> 
+            </span>
+            <span className="profile-names">
+              <h5>{userDisplay.username}</h5>
+            </span>
+          </div>
 
-          <span className="profile-image">
-            <img className="rounded-circle" src={`${userDisplay.image}`} alt="img-profile" height="42" width="42" /> 
-          </span>
-          <span className="profile-names">
-            <h5>{userDisplay.username}</h5>
-          </span>
-          <span className="profile-follow">
-            {this.showFollowButton(userLoggedId, userFoundId, username)}
-          </span>
+          <div>
+            <span className="profile-follow">
+              {this.showFollowButton(userLoggedId, userFoundId, username)}
+            </span>
+          </div>
 
         </div>
         <div className="container-fluid block">
