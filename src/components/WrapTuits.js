@@ -3,6 +3,7 @@ import { withAuth } from '../providers/AuthProvider';
 import tuitService from '../lib/tuit-service';
 import cross from '../img/delete.png';
 import '../App.css'; 
+import { isNull } from 'util';
 
 class WrapTuits extends Component {
 
@@ -34,6 +35,20 @@ class WrapTuits extends Component {
             )
         }
     }
+
+    showButtonDelete(showButton, id) {
+        if(showButton === true) {
+            return(
+                <div>
+                    <button  onClick={() => tuitService.deleteTuit(id) }>
+                            <img src={`${cross}`} alt="icon" className="rounded-circle" />
+                    </button>
+                </div>
+            )
+        } else  {
+            return isNull
+        }
+    }
     
     render() {
 
@@ -44,19 +59,17 @@ class WrapTuits extends Component {
 
         const {_id, info} = this.props.tuit;
         const {id} = this.props;
-        console.log('est', id);
+        console.log('est', this.props.showDelete);
 
         return (
-            <div className="card text-white bg-primary mb-3">
+            <div className="card text-white bg-primary  card-center">
 
                 <div className="card-header">
                     {this.showCorrectImage(this.props.tuit.creator.image,this.props.user.image)}
                     {/* <img src={`${this.props.user.image}`} alt="img-tuit" height="100" width="100" />  */}
                     <h1>{this.props.tuit.creator.username}</h1>
 
-                    <button  onClick={() => tuitService.deleteTuit(id) }>
-                            <img src={`${cross}`} alt="icon" className="rounded-circle" />
-                    </button>
+                    {this.showButtonDelete(this.props.showDelete, id)}
 
                     {this.showButtonFollow(userId, creatorId, _id)}
                 </div>

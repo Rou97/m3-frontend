@@ -81,12 +81,22 @@ class Profile extends Component {
         }
   }
 
+  showDeleteButton(userLoggedId, userFoundId) {
+    if(userLoggedId === userFoundId) {
+        return true
+    } else  {
+        return false
+    }
+}
+
   render() {
     const { tuits, userDisplay } = this.state;
 
     const userLoggedId = this.props.user._id;
     const userFoundId = userDisplay._id;
     const username = userDisplay.username;
+
+    let showDelete = this.showDeleteButton(userLoggedId, userFoundId);
 
     return (
       <div>
@@ -112,6 +122,7 @@ class Profile extends Component {
                   id={tuit._id}
                   tuit={tuit}
                   onDelete={this.handleDelete}
+                  showDelete={showDelete}
                 />
               ))}
             </div>
