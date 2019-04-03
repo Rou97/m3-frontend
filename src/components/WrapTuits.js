@@ -20,9 +20,22 @@ class WrapTuits extends Component {
         }
     }
     
+    test2(a, b){
+        if(a === undefined) {
+            console.log('entra dentro del if')
+            return(
+                <img src={`${b}`} alt="if" height="100" width="100" className="rounded-circle"/> 
+            )
+        } else  {
+            console.log('no entra');
+            return (
+                <img src={`${a}`} alt="else" height="100" width="100" className="rounded-circle"/>
+            )
+        }
+    }
     
     render() {
-
+// 
         const a = this.props.user._id;
         const b = this.props.tuit.creator;
         console.log('now', this.props.tuit.creator.username)
@@ -32,7 +45,8 @@ class WrapTuits extends Component {
             <div className="card text-white bg-primary mb-3">
 
                 <div className="card-header">
-                    <img src={`${this.props.tuit.creator.image}`} alt="img" height="100" width="100" /> 
+                    {this.test2(this.props.tuit.creator.image,this.props.user.image)}
+                    {/* <img src={`${this.props.user.image}`} alt="img-tuit" height="100" width="100" />  */}
                     <h1>{this.props.tuit.creator.username}</h1>
                     {this.test(a,b, _id)}
                 </div>

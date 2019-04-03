@@ -100,7 +100,7 @@ class Profile extends Component {
     return (
       <div>
         <div className="jumbotron">
-          <img src={`${userDisplay.image}`} alt="img" height="42" width="42" /> 
+          <img src={`${userDisplay.image}`} alt="img-profile" height="42" width="42" /> 
           <h5>{userDisplay.username}</h5>
           <h6>{userDisplay.name}</h6>
           {this.test(userLoggedId, userFoundId, username)}
