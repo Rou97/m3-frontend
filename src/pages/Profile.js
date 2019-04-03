@@ -107,7 +107,7 @@ class Profile extends Component {
         </div>
         <div className="container-fluid block">
           <ul>
-            {tuits.map(tuit => (
+            {tuits.length>0 && tuits.map(tuit => (
               <WrapTuits
                 key={tuit._id}
                 tuit={tuit}

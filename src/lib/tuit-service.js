@@ -24,8 +24,13 @@ class TuitService {
       .then(({data}) => data)
   }
 
-  getTuitsByUser(username) {
-    return this.tuit.get(`/profile/${username}/line`)
+  // getTuitsByUser(username) {
+  //   return this.tuit.get(`/profile/${username}/line`)
+  //     .then(({data}) => data)
+  // }
+
+  getTuitsByFollowers(username) {
+    return this.tuit.get(`profile/line/${username}`)
       .then(({data}) => data)
   }
 

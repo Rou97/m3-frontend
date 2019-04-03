@@ -12,7 +12,7 @@ class LinePage extends Component {
     }
 
     getTuits = (username) => {
-        tuitService.getTuitsByUser(username)
+        tuitService.getTuitsByFollowers(username)
           .then(tuits => {
             this.setState({
               tuits
@@ -22,7 +22,7 @@ class LinePage extends Component {
       }
 
     render() {
-        console.log('props', this.props.match.params.username);
+        console.log('ahora', this.state.tuits);
         return (
             <div>
                 Hola
