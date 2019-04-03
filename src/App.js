@@ -9,9 +9,10 @@ import Login from './pages/Login';
 import AuthProvider from './providers/AuthProvider';
 import CreateTuit from './components/CreateTuit';
 import SearchPage from './pages/SearchPage';
+import FollowPage from './pages/FollowPage';
 import LinePage from './pages/LinePage';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // import logo from './img/image.png';
 
 class App extends Component {
@@ -28,7 +29,8 @@ class App extends Component {
               <PrivateRoute exact path="/profile/:username" component={Profile} />
               <PrivateRoute exact path="/profile/:username/tuit" component={CreateTuit} />
               <PrivateRoute exact path="/search" component={SearchPage} />
-              <PrivateRoute exact path="/line" component={LinePage} />
+              <PrivateRoute exact path="/follows" component={FollowPage} />
+              <PrivateRoute exact path="/line/:username" component={LinePage} />
             </Switch>
             <Navbar />
           </div>

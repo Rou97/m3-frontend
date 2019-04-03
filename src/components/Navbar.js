@@ -25,6 +25,7 @@ class Navbar extends Component {
   render() {
     const { isLogged, logout } = this.props;
     const { redirectUser } = this.state;
+    console.log('eo', this.props.user);
     if (isLogged) {
       return <div className="navbar navbar-expand-lg navbar-light bg-light">
         
@@ -36,7 +37,7 @@ class Navbar extends Component {
             <Link className="nav-link" to='/search'>Search</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to='/line'>Tuitline</Link>
+            <Link className="nav-link" to={{ pathname: `/line/${this.props.user.username}`, query:{username:this.props.user.username}}}>Tuitline</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to={{ pathname: `/profile/${this.props.user.username}`, state:{profile:redirectUser}}}>Profile</Link>
