@@ -67,7 +67,7 @@ class Profile extends Component {
         if(userLoggedId === userFoundId) {
             return (
               <div>
-                <Link className="nav-link" to='/follows'>Follows</Link>
+                <Link className="nav-link" to='/follows'><p>Follows</p></Link>
               </div>
             )
         } else  {

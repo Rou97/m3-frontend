@@ -126,6 +126,11 @@
     color: white;
 }
 
+.jumbotron p {
+    color: white;
+    margin-top: 2.5vh;
+}
+
 .profile-image {
     padding: 2vh;
     height: 50%;
