@@ -41,7 +41,6 @@ class Profile extends Component {
   handleSubmit = (data) => {
     tuitService.createTuit(data)
       .then((result) => {
-        console.log('result', result);
         const newTuits = this.state.tuits.concat([result]);
         this.setState({
           tuits: newTuits,
@@ -51,10 +50,8 @@ class Profile extends Component {
   }
 
   handleDelete = (id) => {
-    console.log('a ver', id)
     tuitService.deleteTuit(id)
       .then(data => {
-        console.log("DATA Tuit delete", data);
         const deletedTuit = data.tuit;
         const newTuits = this.state.tuits.filter((tuit) => {
           return tuit._id !== deletedTuit._id;
@@ -68,14 +65,12 @@ class Profile extends Component {
 
   test(userLoggedId, userFoundId, username) {;
         if(userLoggedId === userFoundId) {
-            console.log('no entra');
             return (
               <div>
                 <Link className="nav-link" to='/follows'>Follows</Link>
               </div>
             )
         } else  {
-            console.log('entra');
             return (
               <button  onClick={() => followService.follow(userFoundId, username) }>
                   Follow
@@ -86,24 +81,26 @@ class Profile extends Component {
 
   render() {
     const { tuits, userDisplay } = this.state;
-    // const { username: loggedUsername } = this.props.user;
-
-    console.log('pprops', this.props);
-    console.log('sstate', this.state);
 
     const userLoggedId = this.props.user._id;
     const userFoundId = userDisplay._id;
     const username = userDisplay.username
-    console.log('test', userDisplay.image);
-
 
     return (
       <div>
         <div className="jumbotron">
-          <img src={`${userDisplay.image}`} alt="img-profile" height="42" width="42" /> 
-          <h5>{userDisplay.username}</h5>
-          <h6>{userDisplay.name}</h6>
-          {this.test(userLoggedId, userFoundId, username)}
+
+          <span className="profile-image">
+            <img src={`${userDisplay.image}`} alt="img-profile" height="42" width="42" /> 
+          </span>
+          <span className="profile-names">
+            <h5>{userDisplay.username}</h5>
+            <h6>{userDisplay.name}</h6>
+          </span>
+          <span className="profile-follow">
+            {this.test(userLoggedId, userFoundId, username)}
+          </span>
+
         </div>
         <div className="container-fluid block">
           <ul>

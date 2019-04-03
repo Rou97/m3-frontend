@@ -25,7 +25,6 @@ class Navbar extends Component {
   render() {
     const { isLogged, logout } = this.props;
     const { redirectUser } = this.state;
-    console.log('eo', this.props.user);
     if (isLogged) {
       return <div className="navbar navbar-expand-lg navbar-light bg-light">
         

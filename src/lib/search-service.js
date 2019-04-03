@@ -9,7 +9,6 @@ class SearchService {
   }
 
   getPage(user) {
-    console.log('service', user);
     return this.tuit.get(`/search?user=${user}`)
       .then(({data}) => data)
   }

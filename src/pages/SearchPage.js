@@ -46,7 +46,7 @@ class SearchPage extends Component {
                 <form onSubmit={this.handleSubmit}>
                 <h1 className="title">Search an user</h1>
                     <input className="form-control" type="text" name="user" value={this.state.user }onChange={this.handleChange}/>
-                    <input class="btn btn-primary search" type="submit" value="Search" />
+                    <input className="btn btn-primary search" type="submit" value="Search" />
                 </form>         
             </div>
         );
