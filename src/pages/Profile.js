@@ -71,6 +71,8 @@ class Profile extends Component {
               </div>
             )
         } else  {
+            console.log('userFound', this.state.userDisplay);
+            console.log('userLogged', this.props.user);
             return (
               <button  onClick={() => followService.follow(userFoundId, username) }>
                   Follow
@@ -101,15 +103,18 @@ class Profile extends Component {
           </span>
 
         </div>
-        <div className="container-fluid block">
+        <div>
           <ul>
-            {tuits.length>0 && tuits.map(tuit => (
-              <WrapTuits
-                key={tuit._id}
-                tuit={tuit}
-                onDelete={this.handleDelete}
-              />
-            ))}
+            <div className="container-order">
+              {tuits.length>0 && tuits.map(tuit => (
+                <WrapTuits
+                  key={tuit._id}
+                  id={tuit._id}
+                  tuit={tuit}
+                  onDelete={this.handleDelete}
+                />
+              ))}
+            </div>
           </ul>
         </div>
         {/* <div>

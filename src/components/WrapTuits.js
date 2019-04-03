@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withAuth } from '../providers/AuthProvider';
+import tuitService from '../lib/tuit-service';
 import cross from '../img/delete.png';
 import '../App.css'; 
 
@@ -42,6 +43,8 @@ class WrapTuits extends Component {
         console.log(this.props.tuit);
 
         const {_id, info} = this.props.tuit;
+        const {id} = this.props;
+        console.log('est', id);
 
         return (
             <div className="card text-white bg-primary mb-3">
@@ -50,6 +53,11 @@ class WrapTuits extends Component {
                     {this.showCorrectImage(this.props.tuit.creator.image,this.props.user.image)}
                     {/* <img src={`${this.props.user.image}`} alt="img-tuit" height="100" width="100" />  */}
                     <h1>{this.props.tuit.creator.username}</h1>
+
+                    <button  onClick={() => tuitService.deleteTuit(id) }>
+                            <img src={`${cross}`} alt="icon" className="rounded-circle" />
+                    </button>
+
                     {this.showButtonFollow(userId, creatorId, _id)}
                 </div>
                 <div className="card-body">

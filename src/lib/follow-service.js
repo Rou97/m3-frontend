@@ -20,6 +20,11 @@ class FollowService {
       .then(({data}) => data)
   }
 
+  // isfollowing(userFoundId) {
+  //   return this.tuit.get(`/profile/${userFoundId}/isFollowing`)
+  //     .then(({data}) => data)
+  // }
+
 }
 
 const followService = new FollowService();

@@ -48,11 +48,21 @@ class Navbar extends Component {
         
       </div>
     } else {
-      return <div>
-        <Link to='/login'>Login</Link>
-        <Link to='/signup'>Signup</Link>
+      console.log('props', this.props);
+      console.log('state', this.state);
+      return( 
+      <div className="login-container">
+        <Link to='/login'>
+          Login
+        </Link>
+
+        <small>or</small>
+
+        <Link to='/signup'>
+          Signup
+        </Link>
       </div>
-    }
+      )}
   
   }
 }

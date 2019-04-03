@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { withAuth } from '../providers/AuthProvider';
 
 class Signup extends Component {
@@ -44,23 +43,27 @@ class Signup extends Component {
       <div>
         <form onSubmit={this.handleFormSubmit}>
           <div class="form-group">
-            <label>Username:</label>
+            <label className="label-form">Username:</label>
             <input class="form-control" type="text" name="username" value={username} onChange={this.handleChange}/>
-            <label>Password:</label>
+            <label className="label-form">Password:</label>
             <input class="form-control" type="password" name="password" value={password} onChange={this.handleChange} />
-            <label>Name:</label>
+            <label className="label-form">Name:</label>
             <input class="form-control" type="text" name="name" value={name} onChange={this.handleChange}/>
-            <label>Email:</label>
+            <label className="label-form">Email:</label>
             <input class="form-control" type="email" name="email" value={email} onChange={this.handleChange}/>
-            <label>Image:</label>
+            <label className="label-form">Image:</label>
             <input class="form-control" type="text" name="image" value={image} onChange={this.handleChange}/>
-            <input class="btn btn-primary" type="submit" value="Signup" />
+
+            <div className="button-form">
+              <input class="btn btn-primary" type="submit" value="Signup" />
+            </div>
+
           </div>
         </form>
 
-        <p>Already have account? 
+        {/* <p>Already have account? 
           <Link to={"/login"}> Login</Link>
-        </p>
+        </p> */}
 
       </div>
     )
