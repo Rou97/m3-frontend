@@ -36,12 +36,13 @@ class CreateTuit extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <div className="form-group create-tuit">
+            <div className="form-group search-wrap">
+                <form onSubmit={this.handleSubmit}>
+                    <h1 className="title-create-tuit">Create a tuit</h1>
                     <input className="form-control" type="text" name="" value={this.state.info }onChange={this.handleChange}/>
-                    <input type="submit" value="Create" />
-                </div>
-            </form>
+                    <input className="btn btn-primary search" type="submit" value="Create" />
+                </form>
+            </div>
         );
     }
 }

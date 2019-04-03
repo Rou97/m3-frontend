@@ -96,6 +96,12 @@
     margin-left: 8vh;
 }
 
+.title-create-tuit {
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+    margin-left: 20vw;
+}
+
 .form-control {
     width: 80%;
     margin-left: 10vw;
