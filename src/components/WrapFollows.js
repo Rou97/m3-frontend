@@ -5,15 +5,21 @@ import '../App.css';
 class WrapFollows extends Component {
     render() {
         console.log('test', this.props.follow.following);
-        const { username, name, image } = this.props.follow.following;
+        const { username, image } = this.props.follow.following;
         return (
-            <div className="card-follow">
-                <div className="wrap-image">
+            <div className="text-white bg-primary card-center card">
+                <div className="wrap-image card-header">
                     <img src={`${image}`} alt="img" /> 
                 </div>
-                <div className="body-follow card-body">
-                    <h5 className="card-title">{username}</h5>
-                    <h5 className="card-subtitle mb-2 text-muted">{name}</h5>
+                <div className="body-follow card-body center-text-card card-body card-margin">
+                    <div className="text-card">
+                        You are following:
+                    </div>
+
+                    <div className="text-card">
+                        <h5 className="card-title block">{username}</h5>
+                    </div>
+                    
 
                 </div>
             </div>
