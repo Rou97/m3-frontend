@@ -63,7 +63,7 @@ class Profile extends Component {
       .catch(err => console.log(err));
   }
 
-  test(userLoggedId, userFoundId, username) {;
+  showFollowButton(userLoggedId, userFoundId, username) {;
         if(userLoggedId === userFoundId) {
             return (
               <div>
@@ -84,21 +84,20 @@ class Profile extends Component {
 
     const userLoggedId = this.props.user._id;
     const userFoundId = userDisplay._id;
-    const username = userDisplay.username
+    const username = userDisplay.username;
 
     return (
       <div>
         <div className="jumbotron">
 
           <span className="profile-image">
-            <img src={`${userDisplay.image}`} alt="img-profile" height="42" width="42" /> 
+            <img className="rounded-circle" src={`${userDisplay.image}`} alt="img-profile" height="42" width="42" /> 
           </span>
           <span className="profile-names">
             <h5>{userDisplay.username}</h5>
-            <h6>{userDisplay.name}</h6>
           </span>
           <span className="profile-follow">
-            {this.test(userLoggedId, userFoundId, username)}
+            {this.showFollowButton(userLoggedId, userFoundId, username)}
           </span>
 
         </div>

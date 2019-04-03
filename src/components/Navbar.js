@@ -26,23 +26,23 @@ class Navbar extends Component {
     const { isLogged, logout } = this.props;
     const { redirectUser } = this.state;
     if (isLogged) {
-      return <div className="navbar navbar-expand-lg navbar-light bg-light">
+      return <div className="navbar navbar-expand-lg navbar-dark bg-primary">
         
         <ul className="nav">
           <li className="nav-item">
             <p className="nav-link" onClick={logout}>Logout</p>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to='/search'>Search</Link>
+            <Link className="nav-link" to='/search'><p>Search</p></Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to={{ pathname: `/line/${this.props.user.username}`, query:{username:this.props.user.username}}}>Tuitline</Link>
+            <Link className="nav-link" to={{ pathname: `/line/${this.props.user.username}`, query:{username:this.props.user.username}}}><p>Tuitline</p></Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to={{ pathname: `/profile/${this.props.user.username}`, state:{profile:redirectUser}}}>Profile</Link>
+            <Link className="nav-link" to={{ pathname: `/profile/${this.props.user.username}`, state:{profile:redirectUser}}}><p>Profile</p></Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to={`/profile/${this.props.user.username}/tuit`}>Create</Link>
+            <Link className="nav-link" to={`/profile/${this.props.user.username}/tuit`}><p>Create</p></Link>
           </li>
         </ul>
         

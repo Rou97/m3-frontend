@@ -21,11 +21,15 @@ class WrapTuits extends Component {
         const creatorId = this.props.tuit.creator;
         if(userId === creatorId) {
             return(
-                <img src={`${imageLoggedInUser}`} alt="if" height="100" width="100" className="rounded-circle"/> 
+                <div className="tuit-image">
+                    <img  src={`${imageLoggedInUser}`} alt="if" height="100" width="100" className="rounded-circle"/> 
+                </div>
             )
         } else  {
             return (
-                <img src={`${imageSomeUser}`} alt="else" height="100" width="100" className="rounded-circle"/>
+                <div className="tuit-image">
+                    <img src={`${imageSomeUser}`} alt="else" height="100" width="100" className="rounded-circle"/>
+                </div>
             )
         }
     }
