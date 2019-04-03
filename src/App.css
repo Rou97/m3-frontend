@@ -91,3 +91,8 @@
     background-color: yellow;
     height: 50vh;
 } 
+
+.tuit-line ul {
+    margin: 0;
+    padding: 0;
+}

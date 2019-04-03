@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import tuitService from '../lib/tuit-service';
+import WrapTuits from '../components/WrapTuits';
+import '../App.css';
 
 class LinePage extends Component {
 
@@ -23,9 +25,17 @@ class LinePage extends Component {
 
     render() {
         console.log('ahora', this.state.tuits);
+        const { tuits } = this.state;
         return (
-            <div>
-                Hola
+            <div className="tuit-line">
+                <ul>
+                    {tuits.map(tuit => (
+                    <WrapTuits
+                        key={tuit._id}
+                        tuit={tuit}
+                    />
+                    ))}
+                </ul>
             </div>
         );
     }

@@ -25,12 +25,15 @@ class WrapTuits extends Component {
 
         const a = this.props.user._id;
         const b = this.props.tuit.creator;
+        console.log('now', this.props.tuit.creator.username)
         // const {data, _id, onDelete} = this.props;
         const {_id, info} = this.props.tuit;
         return (
             <div className="card text-white bg-primary mb-3">
 
-                <div className="card-header">ADMIN
+                <div className="card-header">
+                    <img src={`${this.props.tuit.creator.image}`} alt="img" height="100" width="100" /> 
+                    <h1>{this.props.tuit.creator.username}</h1>
                     {this.test(a,b, _id)}
                 </div>
                 <div className="card-body">
