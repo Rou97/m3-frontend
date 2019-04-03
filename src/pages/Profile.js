@@ -103,7 +103,7 @@ class Profile extends Component {
           </span>
 
         </div>
-        <div>
+        <div className="container-fluid block">
           <ul>
             <div className="container-order">
               {tuits.length>0 && tuits.map(tuit => (

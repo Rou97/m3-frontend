@@ -29,12 +29,14 @@ class LinePage extends Component {
         return (
             <div className="tuit-line">
                 <ul>
-                    {tuits.map(tuit => (
-                    <WrapTuits
-                        key={tuit._id}
-                        tuit={tuit}
-                    />
-                    ))}
+                    <div className="container-order">
+                        {tuits.map(tuit => (
+                        <WrapTuits
+                            key={tuit._id}
+                            tuit={tuit}
+                        />
+                        ))}
+                    </div>
                 </ul>
             </div>
         );
