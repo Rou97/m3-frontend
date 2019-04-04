@@ -64,7 +64,7 @@ class WrapTuits extends Component {
         return (
             <div className="card text-white bg-primary  card-center">
 
-                <div className="card-header">
+                <div className="card-header img-head">
                     {this.showCorrectImage(this.props.tuit.creator.image,this.props.user.image)}
                     {/* <img src={`${this.props.user.image}`} alt="img-tuit" height="100" width="100" />  */}
                     <h1>{this.props.tuit.creator.username}</h1>
