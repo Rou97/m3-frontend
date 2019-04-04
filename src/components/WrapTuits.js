@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withAuth } from '../providers/AuthProvider';
-import tuitService from '../lib/tuit-service';
 import cross from '../img/delete.png';
 import '../App.css'; 
 import { isNull } from 'util';
@@ -40,7 +39,7 @@ class WrapTuits extends Component {
         if(showButton === true) {
             return(
                 <div>
-                    <button  onClick={() => tuitService.deleteTuit(id) }>
+                    <button  onClick={() => this.props.onDelete(id) }>
                             <img src={`${cross}`} alt="icon" className="rounded-circle" />
                     </button>
                 </div>
