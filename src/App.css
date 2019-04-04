@@ -277,5 +277,6 @@ small {
 
 .img-head {
     align-items: center;
+    justify-content: space-between;
 }
 
