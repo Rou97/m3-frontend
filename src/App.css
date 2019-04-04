@@ -280,3 +280,8 @@ small {
     justify-content: space-between;
 }
 
+.text-head {
+    display: flex;
+    justify-content: flex-end;
+}
+
