@@ -54,11 +54,9 @@ class WrapTuits extends Component {
         const userId = this.props.user._id;
         const creatorId = this.props.tuit.creator;
 
-        console.log(this.props.tuit);
 
         const {_id, info} = this.props.tuit;
         const {id} = this.props;
-        console.log('est', this.props.showDelete);
 
         return (
             <div className="card text-white bg-primary  card-center">

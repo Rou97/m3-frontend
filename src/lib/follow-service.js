@@ -16,7 +16,7 @@ class FollowService {
 
   getFollows() {
     console.log('entra en getFollow');
-    return this.tuit.get(`/profile/:username/followers`)
+    return this.tuit.get(`/profile/followers`)
       .then(({data}) => data)
   }
 

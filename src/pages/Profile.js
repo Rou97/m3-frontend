@@ -12,6 +12,7 @@ class Profile extends Component {
   state = {
     tuits: [],
     userDisplay: this.props.user,
+    followed: true,
   }
 
   componentDidMount() {
@@ -23,9 +24,15 @@ class Profile extends Component {
       this.setState({
         userDisplay: this.props.location.state.profile,
       })
-    } 
+    }
 
+    
+    
     this.getTuits(paramsUsername);
+    
+    if (this.props.location.state.profile) {
+      this.getFollowState();
+    }
   }
 
   getTuits = (username) => {
@@ -63,38 +70,45 @@ class Profile extends Component {
       .catch(err => console.log(err));
   }
 
-  showFollowButton(userLoggedId, userFoundId, username) {;
-        if(userLoggedId === userFoundId) {
-            return (
-              <div>
-                <Link className="nav-link" to='/follows'><p>Followers</p></Link>
-              </div>
-            )
-        } else  {
-            console.log('userFound', this.state.userDisplay);
-            console.log('userLogged', this.props.user);
-            return (
-              <button  onClick={() => followService.follow(userFoundId, username) }>
-                  Following
-              </button>
-            )
-        }
+  getFollowState = async () => {
+
+    // const { _id: userLoggedId } = this.props.user;
+    // const { _id: userDisplayId } = this.state.userDisplay;
+
+    let newData = await followService.getFollows();
+    newData = newData.filter((follow)=>follow.following.username===this.props.location.state.profile.username)
+
+    this.setState({
+      followed: newData.length>0,
+    })
+  }
+
+  toggleFollow= async ()=>{
+
+    const { _id : userFoundId, username } = this.state.userDisplay;
+    const { followed } = this.state;
+
+    await followService.follow(userFoundId, username);
+
+    this.setState({
+      followed: !followed
+    })
   }
 
   showDeleteButton(userLoggedId, userFoundId) {
-    if(userLoggedId === userFoundId) {
-        return true
-    } else  {
-        return false
+    if (userLoggedId === userFoundId) {
+      return true
+    } else {
+      return false
     }
-}
+  }
 
   render() {
-    const { tuits, userDisplay } = this.state;
+    const { tuits, userDisplay, followed } = this.state;
 
     const userLoggedId = this.props.user._id;
     const userFoundId = userDisplay._id;
-    const username = userDisplay.username;
+    // const username = userDisplay.username;
 
     let showDelete = this.showDeleteButton(userLoggedId, userFoundId);
 
@@ -103,7 +117,7 @@ class Profile extends Component {
         <div className="jumbotron">
           <div className="justify-profile">
             <span className="profile-image">
-              <img className="rounded-circle" src={`${userDisplay.image}`} alt="img-profile" height="42" width="42" /> 
+              <img className="rounded-circle" src={`${userDisplay.image}`} alt="img-profile" height="42" width="42" />
             </span>
             <span className="profile-names">
               <h5>{userDisplay.username}</h5>
@@ -112,7 +126,16 @@ class Profile extends Component {
 
           <div>
             <span className="profile-follow">
-              {this.showFollowButton(userLoggedId, userFoundId, username)}
+              {
+                userLoggedId === userFoundId ?
+                  <div>
+                    <Link className="nav-link" to='/follows'><p>Followers</p></Link>
+                  </div>
+                  :
+                  <button onClick={this.toggleFollow}>
+                    {followed ? "followed" : "follow"}
+                  </button>
+              }
             </span>
           </div>
 
@@ -120,7 +143,7 @@ class Profile extends Component {
         <div className="container-fluid block">
           <ul>
             <div className="container-order">
-              {tuits.length>0 && tuits.map(tuit => (
+              {tuits.length > 0 && tuits.map(tuit => (
                 <WrapTuits
                   key={tuit._id}
                   id={tuit._id}
