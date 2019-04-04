@@ -67,7 +67,7 @@ class Profile extends Component {
         if(userLoggedId === userFoundId) {
             return (
               <div>
-                <Link className="nav-link" to='/follows'><p>Follows</p></Link>
+                <Link className="nav-link" to='/follows'><p>Followers</p></Link>
               </div>
             )
         } else  {
@@ -75,7 +75,7 @@ class Profile extends Component {
             console.log('userLogged', this.props.user);
             return (
               <button  onClick={() => followService.follow(userFoundId, username) }>
-                  Follow
+                  Following
               </button>
             )
         }
