@@ -4,7 +4,6 @@ import '../App.css';
 
 class WrapFollows extends Component {
     render() {
-        console.log('test', this.props.follow.following);
         const { username, image } = this.props.follow.following;
         return (
             <div className="text-white bg-primary card-center card">

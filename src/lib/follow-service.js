@@ -9,13 +9,11 @@ class FollowService {
   }
 
   follow(userFoundId) {
-    console.log('entra en follow');
     return this.tuit.post(`/profile/${userFoundId}/follow`)
       .then(({data}) => data)
   }
 
   getFollows() {
-    console.log('entra en getFollow');
     return this.tuit.get(`/profile/followers`)
       .then(({data}) => data)
   }

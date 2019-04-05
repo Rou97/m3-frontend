@@ -25,14 +25,14 @@ class CreateTuit extends Component {
     handleCreate = (data) => {
         tuitService.createTuit(data)
           .then((result) => {
-            console.log('result', result);
             const newTuits = this.state.tuits.concat([result]);
             this.setState({
               tuits: newTuits,
             })
           })
           .catch(err => console.log(err));
-      }
+
+    }
 
     render() {
         return (

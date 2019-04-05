@@ -19,7 +19,6 @@ class TuitService {
   }
 
   deleteTuit(id) {
-    console.log('iidd', id)
     return this.tuit.delete(`/profile/:username/${id}`)
       .then(({data}) => data)
   }

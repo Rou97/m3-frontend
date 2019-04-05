@@ -35,7 +35,6 @@ class SearchPage extends Component {
 
     render() {
         const { redirectUser } = this.state;
-        console.log("redirect",redirectUser);
 
         if (redirectUser) {
             return <Redirect to={{ pathname: `/profile/${redirectUser.username}`, state:{profile:redirectUser}}}/>;

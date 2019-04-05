@@ -25,8 +25,6 @@ class FollowPage extends Component {
 
     render() {
         const { follows } = this.state;
-        console.log('follows',follows);
-        console.log('followsID',follows._id);
         return (
           <div className="container-fluid block">
           <ul>

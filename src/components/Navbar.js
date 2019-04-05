@@ -48,8 +48,7 @@ class Navbar extends Component {
         
       </div>
     } else {
-      console.log('props', this.props);
-      console.log('state', this.state);
+      
       return( 
       <div className="login-container">
         <Link to='/login'>

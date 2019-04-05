@@ -24,7 +24,6 @@ class LinePage extends Component {
       }
 
     render() {
-        console.log('ahora', this.state.tuits);
         const { tuits } = this.state;
         return (
             <div className="tuit-line">
