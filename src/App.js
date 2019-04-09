@@ -12,6 +12,7 @@ import SearchPage from './pages/SearchPage';
 import FollowPage from './pages/FollowPage';
 import LinePage from './pages/LinePage';
 import HomePage from './pages/HomePage';
+import Error from './pages/Error';
 import 'bootstrap/dist/css/bootstrap.css';
 
 class App extends Component {
@@ -25,13 +26,12 @@ class App extends Component {
               <AnonRoute exact path="/" component={HomePage} />
               <AnonRoute exact path="/signup" component={Signup} />
               <AnonRoute exact path="/login" component={Login} />
-              {/* <PrivateRoute exact path="/profile" component={Profile} /> */}
               <PrivateRoute exact path="/profile/:username" component={Profile} />
               <PrivateRoute exact path="/profile/:username/tuit" component={CreateTuit} />
               <PrivateRoute exact path="/search" component={SearchPage} />
               <PrivateRoute exact path="/follows" component={FollowPage} />
               <PrivateRoute exact path="/line/:username" component={LinePage} />
-
+              <PrivateRoute path="*" component={Error} />
             </Switch>
             <Navbar />
           </div>
